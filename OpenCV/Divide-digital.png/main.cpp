@@ -53,5 +53,7 @@ int main()
         }
     }
 
+    std::cout << "图片划分完成" << std::endl;
+
     return 0;
 }
