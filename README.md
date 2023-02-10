@@ -1,4 +1,7 @@
 # 更新日志
+## 2023.02.11
+- 添加Tool/Deep-Learning
+- 添加Tool/Ubuntu
 ## 2023.02.07
 - 添加Opencv/Divide-digital.png
 ## 2023.02.06
