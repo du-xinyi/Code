@@ -1,11 +1,11 @@
 # 更新日志
 ## 2023.02.11
-- 添加Tool/Deep-Learning
-- 添加Tool/Ubuntu
+- 添加Tool/Ubuntu/Google-Chinesization
 ## 2023.02.07
 - 添加Opencv/Divide-digital.png
 ## 2023.02.06
 - 新建仓库
+
 
 # 仓库文件说明
 ## ARM
