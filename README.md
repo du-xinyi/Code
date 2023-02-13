@@ -1,4 +1,6 @@
 # 更新日志
+## 2024.02.14
+- 添加DeepLearning/HandWrittenNumeral
 ## 2023.02.13
 - 添加Tool/DeepLearning/ChangeSuffix
 - 添加Tool/DeepLearning/NegativeSample
