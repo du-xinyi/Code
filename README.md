@@ -1,4 +1,7 @@
 # 更新日志
+## 2023.02.13
+- 添加Tool/Ubuntu/Backup
+- 添加Tool/Ubuntu/Restore
 ## 2023.02.11
 - 添加Tool/Ubuntu/Google-Chinesization
 ## 2023.02.07
