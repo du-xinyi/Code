@@ -1,5 +1,10 @@
 # 更新日志
 ## 2023.02.13
+- 添加Tool/DeepLearning/ChangeSuffix
+- 添加Tool/DeepLearning/NegativeSample
+- 添加Tool/DeepLearning/ExtractFiles-with-the-SameName
+- 添加Tool/DeepLearning/PartitionDataset
+- 添加Tool/DeepLearning/XMLtoTXT
 - 添加Tool/Ubuntu/Backup
 - 添加Tool/Ubuntu/Restore
 ## 2023.02.11
@@ -8,7 +13,6 @@
 - 添加Opencv/Divide-digital.png
 ## 2023.02.06
 - 新建仓库
-
 
 # 仓库文件说明
 ## ARM
@@ -19,7 +23,7 @@ C程序
 C++程序
 ## OpenCV
 C++通过OpenCV的图像处理程序
-## Deep-Learning
+## DeepLearning
 Python通过PyTorch的深度学习程序
 ## Python
 Python程序
