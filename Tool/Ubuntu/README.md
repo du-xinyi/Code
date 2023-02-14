@@ -1,4 +1,6 @@
 # 更新日志
+## 2023.02.14
+- 修复Google-Chinesization存在汉化失败的情况
 ## 2023.02.13
 - 添加Backup
 - 添加Restore
