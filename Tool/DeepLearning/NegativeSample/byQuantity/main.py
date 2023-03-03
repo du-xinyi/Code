@@ -13,3 +13,4 @@ if filenumber > 30:
         os.makedirs(final_Dir)
     for name in sample:
         shutil.copy(base_dir + name, final_Dir + name)
+    print("A total of %d images were selected" %(picknumber))

@@ -6,7 +6,7 @@ def moveFile(train_img_Dir, train_mask_Dir):
         img_pathDir = os.listdir(train_img_Dir)                    # 提取图片的原始路径
         filenumber = len(img_pathDir)
         # 自定义test的数据比例
-        test_rate = 0.1                                            # 如0.2，就是20%的意思
+        test_rate = 0.1                                            # 0.1，就是10%
         test_picknumber = int(filenumber*test_rate)                # 按照test_rate比例从文件夹中取一定数量图片
         # 自定义val的数据比例
         val_rate = 0.1
@@ -37,15 +37,15 @@ def moveFile(train_img_Dir, train_mask_Dir):
         return
 
 if __name__ == '__main__':
-    # train 从train中移动
-    train_img_Dir = './datasets/images/'
-    train_mask_Dir = './datasets/labels/'
+    # 分割前的图片和标注目录
+    img_Dir = './images/'
+    mask_Dir = './labels/'
     # test路径：图片和标注目录
-    test_img_Dir = './datasets/test/images/'
-    test_mask_Dir = './datasets/test/labels/'
+    test_img_Dir = './test/images/'
+    test_mask_Dir = './test/labels/'
     # val路径：图片和标注文目录
-    val_img_Dir = './datasets/val/images/'
-    val_mask_Dir = './datasets/val/labels/'
+    val_img_Dir = './val/images/'
+    val_mask_Dir = './val/labels/'
 
     if not os.path.exists(test_img_Dir):
         os.makedirs(test_img_Dir)
@@ -56,4 +56,5 @@ if __name__ == '__main__':
     if not os.path.exists(val_mask_Dir):
         os.makedirs(val_mask_Dir)
     # 运行划分数据集函数
-    moveFile(train_img_Dir, train_mask_Dir)
+    moveFile(img_Dir, mask_Dir)
+    print("Partition Completion")

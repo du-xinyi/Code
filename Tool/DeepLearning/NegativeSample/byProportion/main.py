@@ -12,3 +12,4 @@ if not os.path.exists(final_Dir):
     os.makedirs(final_Dir)
 for name in sample:
     shutil.copy(base_dir + name, final_Dir + name)
+print("A total of %s images were selected" %(str(rate * 100) + '%'))

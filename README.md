@@ -1,5 +1,11 @@
 # 更新日志
-## 2024.02.14
+## 2023.03.03
+- 优化Tool/DeepLearning/ChangeSuffix
+- 优化Tool/DeepLearning/NegativeSample
+- 优化Tool/DeepLearning/ExtractFiles-with-the-SameName
+- 优化Tool/DeepLearning/PartitionDataset
+- 优化Tool/DeepLearning/XMLtoTXT
+## 2023.02.14
 - 添加DeepLearning/HandWrittenNumeral
 - 修复Tool/Ubuntu/Google-Chinesization存在汉化失败的情况
 ## 2023.02.13
