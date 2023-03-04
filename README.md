@@ -1,6 +1,7 @@
 # 更新日志
 ## 2023.03.04
 - 添加OpenCV/ChangeIdentificationPhoto
+- 修改Tool/DeepLearning/ExtractFiles-with-the-SameName为Tool/DeepLearning/ExtractSameName
 ## 2023.03.03
 - 优化Tool/DeepLearning/ChangeSuffix
 - 优化Tool/DeepLearning/NegativeSample
