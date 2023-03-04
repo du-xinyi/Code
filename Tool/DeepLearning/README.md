@@ -1,4 +1,6 @@
 # 更新日志
+## 2023.03.04
+- ExtractFiles-with-the-SameName修改为ExtractSameName
 ## 2023.03.03
 - 优化程序
 ## 2023.02.13
@@ -11,7 +13,7 @@
 # 文件说明
 ## ChangeSuffix
 修改文件后缀
-## ExtractFiles-with-the-SameName
+## ExtractSameName
 提取同名文件转移
 ## NegativeSample
 按照训练集的比例或者数量提取出负样本
