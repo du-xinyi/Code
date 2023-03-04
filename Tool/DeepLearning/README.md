@@ -1,6 +1,6 @@
 # 更新日志
 ## 2023.03.04
-- ExtractFiles-with-the-SameName修改为ExtractSameName
+- 修改ExtractFiles-with-the-SameName为ExtractSameName
 ## 2023.03.03
 - 优化程序
 ## 2023.02.13
