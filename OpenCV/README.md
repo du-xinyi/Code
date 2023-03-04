@@ -1,10 +1,14 @@
 # 更新日志
+## 2023.03.04
+- 添加ChangeIdentificationPhoto
 ## 2023.03.03
 - 添加MaskRecognition
 ## 2023.02.07
 - 添加Divide-digital.png
 
 # 文件说明
+## ChangeIdentificationPhoto
+证件照换底
 ## Divide-digital.png
 划分OpenCV的 digits.png（opencv/samples/data/digits.png）为单独的图片，0~9各500张，存储于Number文件夹中
 ## MaskRecognition
