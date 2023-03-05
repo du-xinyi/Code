@@ -35,12 +35,14 @@ C程序
 ## C++
 C++程序
 ## OpenCV
-C++通过OpenCV的图像处理程序
+基于C++-OpenCV的程序
 ## DeepLearning
-Python通过PyTorch的深度学习程序
+基于PyTorch的程序
 ## Python
 Python程序
+## Qt
+Qt程序
 ## Tool
-Python和Shell的工具和脚本
+基于Python和Shell的工具和脚本
 
 
