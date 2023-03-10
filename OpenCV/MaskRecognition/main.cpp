@@ -9,20 +9,20 @@
 using namespace std;
 using namespace cv;
 
-//#define CAMERA //Ïà»ú
+//#define CAMERA //ç›¸æœº
 
 #ifndef CAMERA
-    #define VIDEO //ÊÓÆµ
+    #define VIDEO //è§†é¢‘
 #endif
 
-int main()
+int main(int argc, char** argv)
 {
     cv::CascadeClassifier mFaceDetector;
     cv::CascadeClassifier mEyeDetector;
     cv::CascadeClassifier mMouthDetector;
     cv::CascadeClassifier mNoseDetector;
 
-    /*ÔØÈëÈËÁ³ÌØÕ÷·ÖÀàÆ÷ÎÄ¼ş*/
+    /*è½½å…¥äººè„¸ç‰¹å¾åˆ†ç±»å™¨æ–‡ä»¶*/
     if (mFaceDetector.empty())
         mFaceDetector.load("../XML/haarcascade_frontalface_default.xml");
     if (mEyeDetector.empty())
@@ -32,15 +32,30 @@ int main()
     if (mMouthDetector.empty())
         mMouthDetector.load("../XML/haarcascade_mcs_mouth.xml");
 
+    cv::VideoCapture capture;
+
+    if(argc != 2) //é»˜è®¤æ‰“å¼€æœ¬åœ°æ‘„åƒå¤´æˆ–åŒçº§ç›®å½•ä¸‹çš„test.mp4
+    {
 #ifdef CAMERA
-    cv::VideoCapture capture(0);
+        capture.open(0);
 #endif
 
 #ifdef VIDEO
-    cv::VideoCapture capture("../test.mp4");
+        capture.open("../test.mp4");
+#endif
+    }
+    else
+    {
+#ifdef CAMERA
+        capture.open(argv[1]);
 #endif
 
-    //¼ì²éÊÓÆµÊÇ·ñ´ò¿ª
+#ifdef VIDEO
+        capture.open(string(argv[1]));
+#endif
+    }
+
+    //æ£€æŸ¥è§†é¢‘æ˜¯å¦æ‰“å¼€
     if (!capture.isOpened())
     {
         std::cout << "Cannot Open the Camera or Video" << std::endl;
@@ -48,34 +63,34 @@ int main()
         return -1;
     }
 
-    /*ÊÓÆµÏà¹Ø²ÎÊı*/
-    double rate = capture.get(CAP_PROP_FPS); //Ö¡ÂÊ
-    double height = capture.get(CAP_PROP_FRAME_HEIGHT); //¸ß¶È
-    double width = capture.get(CAP_PROP_FRAME_WIDTH); //¿í¶È
-    double fps = capture.get(CAP_PROP_FPS); //Ë¢ĞÂÂÊ
-    double fourcc = capture.get(CAP_PROP_FOURCC); //±àÂë·½Ê½
+    /*è§†é¢‘ç›¸å…³å‚æ•°*/
+    double rate = capture.get(CAP_PROP_FPS); //å¸§ç‡
+    double height = capture.get(CAP_PROP_FRAME_HEIGHT); //é«˜åº¦
+    double width = capture.get(CAP_PROP_FRAME_WIDTH); //å®½åº¦
+    double fps = capture.get(CAP_PROP_FPS); //åˆ·æ–°ç‡
+    double fourcc = capture.get(CAP_PROP_FOURCC); //ç¼–ç æ–¹å¼
 
-    cv::Mat frame; //ÏÖÔÚµÄÊÓÆµÖ¡
-    cv::Mat mElabImage; //±¸·İframeÍ¼Ïñ
+    cv::Mat frame; //ç°åœ¨çš„è§†é¢‘å¸§
+    cv::Mat mElabImage; //å¤‡ä»½frameå›¾åƒ
 
     cv::namedWindow("Extracted Frame");
 
-    int delay = 1000 / rate; //Á½Ö¡Ö®¼äµÄ¼ä¸ôÊ±¼ä
+    int delay = 1000 / rate; //ä¸¤å¸§ä¹‹é—´çš„é—´éš”æ—¶é—´
 
 
-    VideoWriter SaveVideo("../save.mp4", fourcc, fps, Size(width,height ),true); //±£´æÊÓÆµ
+    VideoWriter SaveVideo("../save.mp4", fourcc, fps, Size(width,height ),true); //ä¿å­˜è§†é¢‘
 
-    /*Ñ­»·²¥·ÅËùÓĞµÄÖ¡*/
+    /*å¾ªç¯æ’­æ”¾æ‰€æœ‰çš„å¸§*/
     while (1)
     {
-        /*ÏÂÒ»Ö¡*/
+        /*ä¸‹ä¸€å¸§*/
         if (!capture.read(frame))
             break;
 
         frame.copyTo(mElabImage);
 
-        /*¼ì²âÁ³*/
-        float scaleFactor = 3.0f; //Ëõ·ÅÒò×Ó
+        /*æ£€æµ‹è„¸*/
+        float scaleFactor = 3.0f; //ç¼©æ”¾å› å­
         vector< cv::Rect > faceVec;
         mFaceDetector.detectMultiScale(frame, faceVec, scaleFactor);
         int i, j;
@@ -84,7 +99,7 @@ int main()
             cv::rectangle(mElabImage, faceVec[i], CV_RGB(255, 0, 0), 2);
             cv::Mat face = frame(faceVec[i]);
 
-            /*¼ì²âÑÛ¾¦*/
+            /*æ£€æµ‹çœ¼ç›*/
             vector< cv::Rect > eyeVec;
             mEyeDetector.detectMultiScale(face, eyeVec);
 
@@ -97,7 +112,7 @@ int main()
                 cv::rectangle(mElabImage, rect, CV_RGB(0, 255, 0), 2);
             }
 
-            /*¼ì²â±Ç×Ó*/
+            /*æ£€æµ‹é¼»å­*/
             vector< cv::Rect > noseVec;
             mNoseDetector.detectMultiScale(face, noseVec, 3);
 
@@ -110,7 +125,7 @@ int main()
                 cv::rectangle(mElabImage, rect, CV_RGB(0, 0, 255), 2);
             }
 
-            /*¼ì²â×ì°Í*/
+            /*æ£€æµ‹å˜´å·´*/
             vector< cv::Rect > mouthVec;
 
             cv::Rect halfRect = faceVec[i];
@@ -137,9 +152,9 @@ int main()
 
         cv::imshow("Extracted Frame", mElabImage);
 
-        SaveVideo.write(mElabImage); //ÊÓÆµ±£´æ
+        SaveVideo.write(mElabImage); //è§†é¢‘ä¿å­˜
 
-        /*ESCÍË³ö*/
+        /*ESCé€€å‡º*/
         if(waitKey(20) == 27)
         {
             cv::destroyAllWindows();

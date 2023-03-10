@@ -18,9 +18,18 @@ int GetDiff(uchar b,uchar g,uchar r,uchar tb,uchar tg,uchar tr); // 计算差值
 cv::Mat BackgroundSeparation(cv::Mat src, InputParama input); //背景分离
 void Clear_MicroConnected_Areas(cv::Mat src, cv::Mat &dst, double min_area); //清除小面积连通区
 
-int main()
+int main(int argc, char** argv)
 {
-    cv::Mat src = imread("../origin.jpg");
+    cv::Mat src;
+    if (argc != 2) //默认读取同级目录下的origin.jpg
+    {
+        src = cv::imread("../origin.jpg");
+    }
+    else
+    {
+        src = cv::imread(argv[1]);
+    }
+
     if(src.empty())
     {
         std::cout << "Can't Open Picture" << std::endl;
@@ -36,11 +45,11 @@ int main()
 
     cv::Mat result = BackgroundSeparation(src, input);
 
-    imshow("original", src);
-    imshow("result", result);
-    imwrite("../result.png", result);
+    cv::imshow("original", src);
+    cv::imshow("result", result);
+    cv::imwrite("../result.png", result);
 
-    waitKey(0);
+    cv::waitKey(0);
 
     return 0;
 }
