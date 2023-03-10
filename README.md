@@ -1,4 +1,6 @@
 # 更新日志
+## 2023.03.10
+- 添加Tool/Ubuntu/OpenCV-DependencyLibrary
 ## 2023.03.04
 - 添加OpenCV/ChangeIdentificationPhoto
 - 修改Tool/DeepLearning/ExtractFiles-with-the-SameName为Tool/DeepLearning/ExtractSameName
