@@ -7,4 +7,4 @@ find_package(OpenCV)
 
 add_executable(Divide_digital_png main.cpp)
 
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${InferenceEngine_LIBS})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
