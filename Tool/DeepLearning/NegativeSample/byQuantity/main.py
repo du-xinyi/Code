@@ -1,7 +1,7 @@
 import os, random, shutil
 
-base_dir = "./datasets/coco/images/train2017/"  # 源图片文件夹路径
-final_Dir = "./images/"  # 移动到新的文件夹路径
+base_dir = "./coco/images/train2017/"  # 源图片文件夹路径
+final_Dir = "./img/"  # 移动到新的文件夹路径
 
 pathDir = os.listdir(base_dir)
 filenumber = len(pathDir)
