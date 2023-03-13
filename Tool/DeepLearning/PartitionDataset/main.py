@@ -38,8 +38,8 @@ def moveFile(train_img_Dir, train_mask_Dir):
 
 if __name__ == '__main__':
     # 分割前的图片和标注目录
-    img_Dir = './images/'
-    mask_Dir = './labels/'
+    img_Dir = './train/images/'
+    mask_Dir = './train/labels/'
     # test路径：图片和标注目录
     test_img_Dir = './test/images/'
     test_mask_Dir = './test/labels/'
