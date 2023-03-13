@@ -6,7 +6,7 @@ def main():
 	path_label = './labels'
 	# 需要从里面挑出来同名的文件
 	path_object = './images'
-	type_object = 'png'
+	type_object = 'jpg'
 	# 输出路径
 	path_output = './img/'
 
