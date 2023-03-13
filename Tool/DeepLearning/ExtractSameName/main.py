@@ -3,12 +3,12 @@ import os
 
 def main():
 	# 提取名称的目标
-	path_label = './val/labels'
+	path_label = './labels'
 	# 需要从里面挑出来同名的文件
-	path_object = './val/images'
+	path_object = './images'
 	type_object = 'png'
 	# 输出路径
-	path_output = './images/'
+	path_output = './img/'
 
 	if not os.path.exists(path_output):
 		os.makedirs(path_output)
