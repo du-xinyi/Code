@@ -58,8 +58,8 @@ if __name__ == "__main__":
     # 把voc的xml标签文件转化为yolo的txt标签文件
     classes = ['car', 'watcher', 'base']  # 需要转化的类别
 
-    xml_files1 = r'datasets/xml' # voc格式的xml标签文件路径
-    save_txt_files1 = r'datasets/labels' # 转化为yolo格式的txt标签文件存储路径
+    xml_files = r'xml/' # voc格式的xml标签文件路径
+    txt_files = r'labels/' # 转化为yolo格式的txt标签文件存储路径
 
-    convert_annotation(xml_files1, save_txt_files1, classes)
+    convert_annotation(xml_files, txt_files, classes)
     print("Change Completion")
